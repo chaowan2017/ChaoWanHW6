@@ -1,8 +1,7 @@
 /**
  * Created by CHAOWAN on 11/15/2016.
  */
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 
 public class IntList {
@@ -66,10 +65,50 @@ public class IntList {
         }
         System.out.println("if there is x in List" + ":" + list.contains(x));
 }
-
-    public boolean equals(Object o){
-        System.out.println(x.equals(y));
-        System.out.println(y.equals(x));
-
+    public boolean equals(int X,int Y){
+        return (X==Y);
     }
+
+    public void Append(StringBuffer x, StringBuffer y) {
+        x.append(y);
+    }
+
+    public void reverse(){
+        List xList = new ArrayList();
+        Collections.reverse(xList);
+    }
+
+    public void reverseMe(List<String> list) {
+        ListIterator<String> iterator = list.listIterator(list.size());
+        while(iterator.hasPrevious()){
+            System.out.printf("%s", iterator.previous());
+        }
+        System.out.println();
+    }
+
+    public void sortArray(int[] x){
+        boolean swapped = true;
+        while(swapped){
+            swapped = false;
+            for(int i=1; i < x.length; i++){
+                int temp= 0;
+                if(x[i-1]>x[i]){
+                    temp = x[i-1];
+                    x[i-1]=x[i];
+                    x[i] = temp;
+                    swapped = true;
+                }
+            }
+        }
+    }
+
+    public void sortMe(int[] x){
+        int init[] = {};
+        List list = new ArrayList(Arrays.asList(init));
+        System.out.println("List befor:"+ list);
+        Collections.sort(list);
+        System.out.println("List after:" + list);
+    }
+
+
 }
